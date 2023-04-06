@@ -1,0 +1,52 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    display: grid;
+    width: 100vw;
+    height: 1000px;
+    grid-template-columns: 1fr 3.7fr;
+    grid-template-rows: 1fr 4fr;
+    .sidebar{
+        background-color : #3b82f6;
+        grid-area: 1/1/-1/2;
+        padding-left: 20px;
+
+        font-family: sans-serif;
+        color : white;
+        
+        ul{
+            padding-left: 0;
+        }
+        h1{
+            display: flex;
+            align-items: center;
+        }
+        li{
+            
+            
+            font-weight: bold;
+            font-size : 20px;
+           
+            display: flex;
+            align-items: center;
+            img{
+                width : 50px;
+            }
+        }
+        #settings{
+            margin-top : 2.5rem;
+        }
+    }
+
+
+    .top{
+       
+    }
+    
+    .content{
+        background-color: lightgray;
+    }
+}
+
