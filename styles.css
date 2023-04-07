@@ -10,9 +10,12 @@ body {
 }
 
 .profile-pic {
+  border-radius: 100%;
+}
+
+.user.profile-pic {
   background-color: hsl(57, 40%, 80%);
   border: solid 1px hsl(57, 40%, 70%);
-  border-radius: 100%;
 }
 
 .vert-align {
@@ -23,12 +26,14 @@ body {
 .container {
   display: grid;
   width: 100%;
-  height: 1000px;
   grid-template-columns: 1fr 3.7fr;
-  grid-template-rows: min-content 4fr;
-  --main-color: #14b8a6;
+  grid-template-rows: min-content min-content;
+  --main-color: hsl(173, 80%, 40%);
+  --active-color: hsl(173, 80%, 37%);
 }
 .container .sidebar {
+  position: relative;
+  z-index: 50;
   background-color: var(--main-color);
   grid-area: 1/1/-1/2;
   padding-left: 20px;
@@ -48,22 +53,27 @@ body {
   padding-right: 1rem;
 }
 .container .sidebar li {
+  cursor: pointer;
   font-weight: bold;
   font-size: calc(1rem + 0.4vw);
   display: flex;
   align-items: center;
+  margin: 1.5rem 0;
 }
 .container .sidebar li img {
-  padding-right: 1rem;
-  width: 3.2rem;
+  padding-right: 2rem;
+  padding-left: 0.7rem;
+  width: 1.6rem;
 }
 .container .sidebar #settings {
   margin-top: 2.5rem;
 }
 .container .top {
+  position: relative;
   display: grid;
   grid-template: 1fr 1fr/1.5fr 1fr;
   padding: 0 50px;
+  box-shadow: 0 5px 10px lightgray;
 }
 .container .top .search {
   display: flex;
@@ -104,7 +114,7 @@ body {
 }
 .container .top .project-actions {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
   padding: 30px;
   gap: 30px;
 }
@@ -115,7 +125,80 @@ body {
   font-size: 1.2rem;
   font-weight: 1000;
   border: none;
+  cursor: pointer;
+}
+.container .top .project-actions [class|=action]:hover {
+  box-shadow: inset 0px 0px 5px 1px gray;
+  background-color: var(--active-color);
 }
 .container .content {
-  background-color: lightgray;
+  background-color: hsl(173, 15%, 90%);
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 2.8fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 1.2rem;
+  padding-bottom: 5rem;
+  --p-color: hsl(0, 0%, 30%);
+}
+.container .content .content-box {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px 2px lightgray;
+}
+.container .content .experiments {
+  grid-row: 1/-1;
+}
+.container .content .experiments .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+.container .content .experiments .cards button {
+  border: none;
+  background-color: inherit;
+}
+.container .content .experiments .cards .card {
+  border-left: 8px solid rgb(225, 255, 0);
+  padding: 1rem 2rem;
+  display: grid;
+  grid-template-rows: 2fr 150px 2fr;
+}
+.container .content .experiments .cards .card h3 {
+  margin: 0;
+  align-self: end;
+}
+.container .content .experiments .cards .card p {
+  margin-top: 5px;
+  color: var(--p-color);
+  overflow: hidden;
+}
+.container .content .experiments .cards .card .card-actions {
+  justify-self: end;
+  display: flex;
+  gap: 10px;
+}
+.container .content .trending {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.container .content .trending h2 {
+  margin-bottom: 10px;
+}
+.container .content .trending .trending-projects {
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container .content .trending .trending-projects .trending-project {
+  padding: 0.5rem 0;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+.container .content .trending .trending-projects .trending-project .profile-project {
+  color: var(--p-color);
 }/*# sourceMappingURL=styles.css.map */

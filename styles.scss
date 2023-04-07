@@ -1,145 +1,260 @@
-body{
+body {
     padding: 0;
     margin: 0;
     font-family: sans-serif;
 }
 
-.profile-name{
+.profile-name {
     font-weight: bold;
     font-size: 1.3rem;
 }
 
-.profile-pic{
+.profile-pic {
+    
+    border-radius: 100%;
+}
+.user.profile-pic{
     background-color: hsl(57, 40%, 80%);
     border: solid 1px hsl(57, 40%, 70%);
-    border-radius: 100%;    
 }
 
 
 
-.vert-align{
+.vert-align {
     display: flex;
     align-items: center;
 }
 
 
 
-.container{
+.container {
     display: grid;
     width: 100%;
-    height: 1000px;
+    
     grid-template-columns: 1fr 3.7fr;
-    grid-template-rows: min-content 4fr;
-    --main-color: #14b8a6;
+    grid-template-rows: min-content min-content;
+    --main-color: hsl(173, 80%, 40%);
+    --active-color: hsl(173, 80%, 37%);
 
-    .sidebar{
-        background-color : var(--main-color);
+    .sidebar {
+        position: relative;
+        z-index: 50;
+        background-color: var(--main-color);
         grid-area: 1/1/-1/2;
         padding-left: 20px;
 
         font-family: sans-serif;
-        color : white;
-        
-        ul{
+        color: white;
+
+        ul {
             padding-left: 0;
         }
-        h1{
+
+        h1 {
             display: flex;
             align-items: center;
             font-size: calc(1.5rem + 0.4vw);
             padding-right: 2rem;
-            img{
+
+            img {
                 padding-right: 1rem;
             }
-            
+
         }
-        li{ 
+
+        li {
+            cursor: pointer;
             font-weight: bold;
-            font-size : calc(1rem + 0.4vw);
-           
+            font-size: calc(1rem + 0.4vw);
+
             display: flex;
             align-items: center;
-            img{
-                padding-right: 1rem;
-                width : 3.2rem;
+            margin: 1.5rem 0;
+
+            img {
+                padding-right: 2rem;
+                padding-left : 0.7rem;
+                width: 1.6rem;
             }
         }
-        #settings{
-            margin-top : 2.5rem;
+
+        #settings {
+            margin-top: 2.5rem;
         }
     }
 
 
-    .top{
-       display: grid;
-       grid-template: 1fr 1fr/ 1.5fr 1fr;
-       padding: 0 50px;
-       .search{
+    .top {
+        position: relative;
+        display: grid;
+        grid-template: 1fr 1fr/ 1.5fr 1fr;
+        padding: 0 50px;
+        box-shadow: 0 5px 10px lightgray;
+
+        .search {
             display: flex;
             align-items: center;
             gap: 10px;
-            input{
-                
-                flex:1;
-                height: 1.5rem;  
-                background-color: hsl(0, 0%, 83%);  
+
+            input {
+
+                flex: 1;
+                height: 1.5rem;
+                background-color: hsl(0, 0%, 83%);
                 border: 2px solid hsl(0, 0%, 70%);
                 border-radius: 10px;
-                 
+
             }
-       }
-       .profile-info{
+        }
+
+        .profile-info {
             display: flex;
             justify-self: end;
             gap: 20px;
-       }
+        }
 
-       .profile-intro{
+        .profile-intro {
             display: grid;
             grid-template: 1fr 1fr / 1fr 3fr;
             align-items: center;
             font-weight: bold;
             padding-bottom: 20px;
-            .profile-pic{
+
+            .profile-pic {
                 grid-row: 1/-1;
-                place-self: center; 
+                place-self: center;
             }
-            div:nth-child(3){
-                
+
+            div:nth-child(3) {
+
                 font-size: 1.5rem;
-                
+
                 display: flex;
                 align-items: center;
                 gap: 5px;
-                
+
             }
-            .profile-name{
+
+            .profile-name {
                 font-size: 2rem;
             }
-       }
-       
-       .project-actions{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
-        padding: 30px;
-        gap: 30px;
-        
-            [class|="action"]{
+        }
+
+        .project-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            padding: 30px;
+            gap: 30px;
+
+            [class|="action"] {
                 border-radius: 30px;
                 background-color: var(--main-color);
                 color: white;
                 font-size: 1.2rem;
                 font-weight: 1000;
                 border: none;
+                cursor: pointer;
+
+                &:hover {
+                    box-shadow: inset 0px 0px 5px 1px gray;
+                    background-color: var(--active-color);
+                }
             }
 
-       }
-       
-       
+        }
+
+
     }
-    
-    .content{
-        background-color: lightgray;
+
+    .content {
+        background-color: hsl(173, 15%, 90%);
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 2.8fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        padding: 1.2rem;
+        padding-bottom: 5rem;
+
+        --p-color: hsl(0, 0%, 30%);
+        .content-box{
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 2px 2px 4px 2px lightgray;
+            
+        }
+
+        .experiments{
+            grid-row: 1/-1;
+            
+            .cards{
+                
+                
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                grid-template-rows: 1fr 1fr 1fr;
+
+                gap: 2rem;
+                
+                button{
+                    border: none; 
+                    background-color: inherit;
+                }
+                .card{
+
+                    border-left: 8px solid rgb(225, 255, 0);
+                    padding: 1rem 2rem;
+
+                    display: grid;
+                    grid-template-rows: 2fr 150px 2fr;
+                    
+                    h3{
+                        margin: 0;
+                        align-self: end;
+                    }
+                    p{
+                        margin-top: 5px;
+                        color: var(--p-color);
+                        overflow: hidden;
+                        
+                    }
+                    .card-actions{
+                        justify-self: end;
+                        display: flex;
+                        gap: 10px;
+                    }
+                }
+            }
+        }
+        .trending{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            
+            h2{
+                margin-bottom: 10px;
+            }
+            .trending-projects{
+                flex: 1;
+                
+                padding: 1rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                
+                .trending-project{
+                    padding : 0.5rem 0;
+                    display: grid;
+                    grid-template-columns: 1fr 3fr;
+                    .profile-project{
+                        color: var(--p-color);
+                    }
+                    
+                }
+                
+            }
+        }
+
+        
+        
     }
 }
-

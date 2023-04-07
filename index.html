@@ -31,11 +31,11 @@
         </div>
         <div class="top">
             <div class="search">
-                <img src="img/placeholder.png" width="50px">
+                <img src="img/placeholder.png" width="30px">
                 <input type="text">
             </div>
             <div class="profile-info vert-align">
-                <img class="notification-bell" src="img/placeholder.png" width="50px">
+                <img class="notification-bell" src="img/placeholder.png" width="30px">
                 <div class="user profile-pic"><img width="50px"></div>
                 <span class="user profile-name"></span>   
             </div>
@@ -57,7 +57,41 @@
         </div>
         
         <div class="content">
+            <div class="experiments">
+                <h2>Your Experiments</h2>
+                <div class="cards">
+                    <template id="tmpl-project">
+                        <div class="card content-box">
+                            <h3>Title</h3>
+                            <p>....Random Text Stuff....</p>
+                            <div class="card-actions">
+                                <button><img src="img/placeholder.png" width="30px"></button>
+                                <button><img src="img/placeholder.png" width="30px"></button>
+                                <button><img src="img/placeholder.png" width="30px"></button>
+                          </div>
+                        </div>
+                    </template>
+                   
+                </div>
+            </div>
 
+            <div class="bulletin">
+                <h2>Bulletin</h2>
+            </div>
+            <div class="trending">
+                <h2>Trending</h2>
+                <div class="trending-projects content-box">
+                    <template id="tmpl-user">
+                        <div class="trending-project">
+                            <div class="profile-pic"><img width="50px"></div>
+                            <div>
+                                <div class="profile-tag"></div>
+                                <div class="profile-project"></div>
+                            </div> 
+                        </div>   
+                    </template>
+                </div>
+            </div>
         </div>
     </div>
 
