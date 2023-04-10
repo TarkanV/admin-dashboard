@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <script src="script.js" defer></script>
     <title>Admin Dashboard</title>
 </head>
+
 <body>
 
     <div class="container">
@@ -18,35 +20,37 @@
                 Scienceboard
             </h1>
             <ul>
-                <li id="home"><img src="img/placeholder.png" alt="home icon"> Home</li>
-                <li id="profile"><img src="img/placeholder.png" alt="profile icon"> Profile</li>
-                <li id="messages"><img src="img/placeholder.png" alt="messages icon"> Messages</li>
-                <li id="history"><img src="img/placeholder.png" alt="history icon"> History</li>
-                <li id="tasks"><img src="img/placeholder.png" alt="tasks icon"> Tasks</li>
-                <li id="communities"><img src="img/placeholder.png" alt="communities icon"> Communities</li>
-                <li id="settings"><img src="img/placeholder.png" alt="settings icon"> Settings</li>
-                <li id="support"><img src="img/placeholder.png" alt="support icon"> Support</li>
-                <li id="privacy"><img src="img/placeholder.png" alt="privacy icon"> Privacy</li>
-            </ul>   
+                <li id="home"><img src="img/home_FILL0_wght400_GRAD0_opsz48.svg" alt="home icon"> Home</li>
+                <li id="profile"><img src="img/account_box_FILL0_wght400_GRAD0_opsz48.svg" alt="profile icon"> Profile</li>
+                <li id="messages"><img src="img/sms_FILL0_wght400_GRAD0_opsz48.svg" alt="messages icon"> Messages</li>
+                <li id="history"><img src="img/history_FILL0_wght400_GRAD0_opsz48.svg" alt="history icon"> History</li>
+                <li id="tasks"><img src="img/description_FILL0_wght400_GRAD0_opsz48.svg" alt="tasks icon"> Tasks</li>
+                <li id="communities"><img src="img/group_FILL0_wght400_GRAD0_opsz48.svg" alt="communities icon"> Communities</li>
+                <li id="settings"><img src="img/settings_FILL0_wght400_GRAD0_opsz48.svg" alt="settings icon"> Settings</li>
+                <li id="support"><img src="img/support_FILL0_wght400_GRAD0_opsz48.svg" alt="support icon"> Support</li>
+                <li id="privacy"><img src="img/lock_FILL0_wght400_GRAD0_opsz48.svg" alt="privacy icon"> Privacy</li>
+            </ul>
         </div>
         <div class="top">
             <div class="search">
-                <img src="img/placeholder.png" width="30px">
-                <input type="text">
+                <label for="searchbar"><img src="img/search_FILL0_wght600_GRAD0_opsz48.svg" width="30px"></label>
+                <input type="text" id="searchbar">
             </div>
             <div class="profile-info vert-align">
-                <img class="notification-bell" src="img/placeholder.png" width="30px">
-                <div class="user profile-pic"><img width="50px"></div>
-                <span class="user profile-name"></span>   
+                <img class="notification-bell" src="img/notifications_FILL0_wght600_GRAD0_opsz48.svg" width="30px">
+                <div class="user profile-pic" style="width: 50px;"><img ></div>
+                <span class="user profile-name"></span>
             </div>
 
             <div class="profile-intro">
-                <div class="user profile-pic"><img width="80px"></div>
-                <div>Hi there,</div>
-                <div >
-                    <span class="user profile-name"></span>
-                    <span>(<span class="user profile-tag"></span>)</span>
-                </div>     
+                <div class="user profile-pic" style="width: 80px;"><img ></div>
+                <div>
+                    <div class="profile-greet">Hi there,</div>
+                    <div class="profile-ids">
+                        <span class="user profile-name"></span>
+                        <span>(<span class="user profile-tag"></span>)</span>
+                    </div>
+                </div>
             </div>
 
             <div class="project-actions">
@@ -55,7 +59,7 @@
                 <button class="action-share">Share</button>
             </div>
         </div>
-        
+
         <div class="content">
             <div class="experiments">
                 <h2>Your Experiments</h2>
@@ -65,18 +69,40 @@
                             <h3>Title</h3>
                             <p>....Random Text Stuff....</p>
                             <div class="card-actions">
-                                <button><img src="img/placeholder.png" width="30px"></button>
-                                <button><img src="img/placeholder.png" width="30px"></button>
-                                <button><img src="img/placeholder.png" width="30px"></button>
-                          </div>
+                                <button class="card-bookmark"><img src="img/bookmark_FILL0_wght400_GRAD0_opsz48.svg" width="30px"></button>
+                                <button class="card-visibility"><img src="img/public_FILL0_wght400_GRAD0_opsz48.svg" width="30px"></button>
+                                <button class="card-share"><img src="img/share_FILL0_wght400_GRAD0_opsz48.svg" width="30px"></button>
+                            </div>
                         </div>
                     </template>
-                   
+
                 </div>
             </div>
 
             <div class="bulletin">
                 <h2>Bulletin</h2>
+                <div class="articles content-box">
+                    <div class="article">
+                        <h4>We Did It Again</h4>
+                        <p>We apologize for the previous apology. Our team has now made another mistake and we're here
+                            to own up to it. But hey, at least we're consistent, right?</p>
+                    </div>
+                    <hr/>
+                    <div class="article">
+                        <h4>New Feature</h4>
+                        <p>Tired of liking or disliking things? Introducing our new feature: the 'Meh' button! Now you
+                            can give a non-committal response to any content you come across.</p>
+                    </div>
+                    <hr/>
+                    <div class="article">
+                        <h4>The Great Typo Debacle</h4>
+                        <p>It seems our proofreading skills aren't as great as we thought they were. We've discovered a
+                            number of typos on our website, but instead of fixing them, we're turning it into a game!
+                            Can you spot all the mistakes?</p>
+                    </div>
+
+                </div>
+
             </div>
             <div class="trending">
                 <h2>Trending</h2>
@@ -87,8 +113,8 @@
                             <div>
                                 <div class="profile-tag"></div>
                                 <div class="profile-project"></div>
-                            </div> 
-                        </div>   
+                            </div>
+                        </div>
                     </template>
                 </div>
             </div>
@@ -96,4 +122,5 @@
     </div>
 
 </body>
+
 </html>

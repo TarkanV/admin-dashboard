@@ -10,12 +10,29 @@ body {
 }
 
 .profile-pic {
-    
+
     border-radius: 100%;
+    
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    
+    img{
+        width: 105%;
+    }
+    &:hover{
+        filter: brightness(70%);
+    }
+    cursor: pointer;
+    
 }
-.user.profile-pic{
-    background-color: hsl(57, 40%, 80%);
+
+.user.profile-pic {
+    
+    background-color:hsl(40, 50%, 80%);
     border: solid 1px hsl(57, 40%, 70%);
+
+    
 }
 
 
@@ -30,7 +47,7 @@ body {
 .container {
     display: grid;
     width: 100%;
-    
+
     grid-template-columns: 1fr 3.7fr;
     grid-template-rows: min-content min-content;
     --main-color: hsl(173, 80%, 40%);
@@ -53,7 +70,7 @@ body {
         h1 {
             display: flex;
             align-items: center;
-            font-size: calc(1.5rem + 0.4vw);
+            font-size: calc(1.8rem + 0.1vw);
             padding-right: 2rem;
 
             img {
@@ -65,7 +82,7 @@ body {
         li {
             cursor: pointer;
             font-weight: bold;
-            font-size: calc(1rem + 0.4vw);
+            font-size: calc(1.3rem + 0.1vw);
 
             display: flex;
             align-items: center;
@@ -73,8 +90,10 @@ body {
 
             img {
                 padding-right: 2rem;
-                padding-left : 0.7rem;
+                padding-left: 0.7rem;
                 width: 1.6rem;
+                filter: invert(100%);
+                stroke-width: 30Px;
             }
         }
 
@@ -95,14 +114,18 @@ body {
             display: flex;
             align-items: center;
             gap: 10px;
+            
 
             input {
 
                 flex: 1;
                 height: 1.5rem;
-                background-color: hsl(0, 0%, 83%);
-                border: 2px solid hsl(0, 0%, 70%);
-                border-radius: 10px;
+                background-color: hsl(173, 15%, 83%);
+                border: 2px solid hsl(173, 15%, 75%);
+                border-radius: 20px;
+                outline-color : hsl(173, 15%, 50%);
+                padding: 0.3rem 0.5rem;
+                margin-right: 1rem;
 
             }
         }
@@ -111,27 +134,34 @@ body {
             display: flex;
             justify-self: end;
             gap: 20px;
+            .notification-bell{
+                cursor: pointer;
+            }
         }
 
         .profile-intro {
-            display: grid;
-            grid-template: 1fr 1fr / 1fr 3fr;
+            display: flex;
             align-items: center;
             font-weight: bold;
             padding-bottom: 20px;
 
             .profile-pic {
-                grid-row: 1/-1;
-                place-self: center;
+                margin-right: 20px;
+                align-self: center;
+                aspect-ratio: 1/1;
+               
+                
+            }
+            .profile-greet{
+                align-self: end;
+                margin-bottom: 8px;
             }
 
-            div:nth-child(3) {
-
+            .profile-ids {
+                align-self: start;
                 font-size: 1.5rem;
 
-                display: flex;
-                align-items: center;
-                gap: 5px;
+                
 
             }
 
@@ -142,12 +172,13 @@ body {
 
         .project-actions {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
             padding: 30px;
             gap: 30px;
 
             [class|="action"] {
                 border-radius: 30px;
+                height: 2.5rem; 
                 background-color: var(--main-color);
                 color: white;
                 font-size: 1.2rem;
@@ -165,96 +196,183 @@ body {
 
 
     }
+    
 
     .content {
         background-color: hsl(173, 15%, 90%);
         display: grid;
-        gap: 1rem;
+        gap: 2rem;
         grid-template-columns: 2.8fr 1fr;
         grid-template-rows: 1fr 1fr;
         padding: 1.2rem;
         padding-bottom: 5rem;
 
         --p-color: hsl(0, 0%, 30%);
-        .content-box{
+
+        .content-box {
             background-color: white;
             border-radius: 8px;
             box-shadow: 2px 2px 4px 2px lightgray;
-            
+
         }
 
-        .experiments{
+        .experiments {
             grid-row: 1/-1;
-            
-            .cards{
-                
-                
+
+            .cards {
+
+
                 display: grid;
                 grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
                 grid-template-rows: 1fr 1fr 1fr;
 
                 gap: 2rem;
-                
-                button{
-                    border: none; 
+
+                button {
+                    border: none;
                     background-color: inherit;
                 }
-                .card{
 
+                .card {
+                
                     border-left: 8px solid rgb(225, 255, 0);
                     padding: 1rem 2rem;
 
                     display: grid;
                     grid-template-rows: 2fr 150px 2fr;
-                    
-                    h3{
+
+                    h3 {
                         margin: 0;
                         align-self: end;
+                        cursor: pointer;
                     }
-                    p{
+
+                    p {
                         margin-top: 5px;
                         color: var(--p-color);
                         overflow: hidden;
-                        
+
                     }
-                    .card-actions{
+
+                    .card-actions {
                         justify-self: end;
                         display: flex;
                         gap: 10px;
+
+                        button{
+                            border-radius: 10px;
+                            cursor: pointer;
+                        }
+                        button:hover{
+                            background-color: hsl(173, 15%, 90%);
+                        }
                     }
+                    transition-duration: 0.3s;
+                }
+                .card:hover{
+                    transform: translate(0, -10px);
+                    
                 }
             }
         }
-        .trending{
+
+        .bulletin {
+            display: flex;
+            flex-direction: column;
+            .articles {
+                padding: 1.5rem;
+                flex: 1;
+                display: grid;
+                grid-template-rows: min-content 1fr min-content 1fr min-content;
+
+                hr{
+                    border: 1px solid lightgray;
+                    height : 0;
+                    width: 100%;
+                    align-self: center;
+                }
+
+                .article {
+
+                    h4 {
+                        margin: 0;
+                        cursor: pointer;
+                    }
+    
+                    p {
+                        margin: 0;
+                        color: var(--p-color);
+                        font-size: 0.8rem;
+                    }
+    
+                }
+            }
+        }
+
+        .trending {
             height: 100%;
             display: flex;
             flex-direction: column;
-            
-            h2{
-                margin-bottom: 10px;
-            }
-            .trending-projects{
-                flex: 1;
+
+            h2 {
                 
+            }
+            
+
+            .trending-projects {
+                flex: 1;
+
                 padding: 1rem;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
                 
-                .trending-project{
-                    padding : 0.5rem 0;
+
+                .trending-project {
+                    padding: 0.5rem 0;
                     display: grid;
-                    grid-template-columns: 1fr 3fr;
-                    .profile-project{
-                        color: var(--p-color);
+                    grid-template-columns: auto 1fr;
+                    .profile-pic{
+                        margin-right: 10px;
+                        cursor: pointer;
+                        background-color: hsl(40, 50%, 80%);
+                        width: 50px;
+                        height: 50px;
+                       
+                        
                     }
-                    
+                    .profile-pic > img{
+                        
+                        width: 101%;       
+                        
+                    }
+                    .profile-tag{
+                        cursor: pointer;
+                    }
+
+                    .profile-project {
+                        color: var(--p-color);
+                        cursor: pointer;
+
+                    }
+
                 }
-                
+
             }
         }
 
         
-        
+
+
+    }
+
+    @media screen and (max-width: 1260px) {
+        .content{
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
+        .experiments{
+            grid-column : 1/-1;
+        }
     }
 }
