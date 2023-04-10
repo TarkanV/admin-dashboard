@@ -134,8 +134,8 @@ body {
 }
 .container .top .project-actions {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-  padding: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  padding: 25px;
   gap: 30px;
 }
 .container .top .project-actions [class|=action] {
