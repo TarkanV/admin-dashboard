@@ -18,7 +18,7 @@ body {
     place-items: center;
     
     img{
-        width: 105%;
+        width: 100%;
     }
     &:hover{
         filter: brightness(70%);
@@ -30,7 +30,7 @@ body {
 .user.profile-pic {
     
     background-color:hsl(40, 50%, 80%);
-    border: solid 1px hsl(57, 40%, 70%);
+    border: solid 1px hsl(56, 40%, 70%);
 
     
 }
